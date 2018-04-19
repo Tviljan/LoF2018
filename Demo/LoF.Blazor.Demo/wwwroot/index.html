@@ -5,17 +5,26 @@
     <title>LoF.Blazor.Demo</title>
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/chartist/chartist.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
     <app>Loading...</app>
 
     <script src="css/bootstrap/bootstrap-native.min.js"></script>
+    <script src="css/chartist/chartist.min.js"></script>
     <script type="blazor-boot"></script>
 <script type="text/javascript">
-    Blazor.registerFunction('BlazorLibrary.CSharp.ExampleJsInterop.Prompt', function (message) {
-        return prompt(message, 'Type anything here');
-    });
+
+   
+
+        Blazor.registerFunction('LoF.Blazor.Demo.Implementatios.Chartist.Line', function (e,d,o) {
+            Chartist.Line(e, d, o)
+            return true;
+        });
+        
+
+
 </script>
 </body>
 </html>
