@@ -1,0 +1,35 @@
+﻿@page "/chart"
+@using Microsoft.AspNetCore.Blazor.Browser.Interop
+@using LoF.Blazor.Demo.Implementatios
+
+<h1>Chart</h1>
+<div class="ct-chart" id="chart"></div>
+
+<button onclick=@CallJS>Show chart</button>
+
+@functions {
+int currentCount = 0;
+
+void IncrementCount()
+{
+    currentCount++;
+}
+
+private void CallJS()
+{
+    var data = new LineData()
+    {
+        labels = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" },
+        series = new double[][] { new double[] { 12, 9, 7, 8, 5 }, new double[] { 2, 1, 3.5, 7, 3 }, new double[] { 1, 3, 4, 5, 6 } }
+    };
+
+    var options = new LineOptions
+    {
+        fullWidth = true
+    };
+
+    var c = new Chartist();
+    c.Line("#chart", data, options);
+}
+
+}

@@ -17,4 +17,8 @@
     <BlazorGenerate Remove="Pages\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <BlazorGenerate Remove="Pages\Chart.cshtml" />
+  </ItemGroup>
+
 </Project>

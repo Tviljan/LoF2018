@@ -8,11 +8,9 @@ namespace LoF.Blazor.Demo.Implementatios
 {
     public class Chartist : IChartist
     {
-
         public void Line(string element, ILineData data, ILineOptions options)
         {
             RegisteredFunction.Invoke<bool>(JsFunctionHelper.GetFunctionName(this), element, data, options);
-
         }
     }
 
