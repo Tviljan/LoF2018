@@ -1,0 +1,21 @@
+@implements ILayoutComponent
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <NavMenu />
+        </div>
+        <div class="container body-content">
+            @Body
+            <hr />
+            <footer>
+                <p>&copy; 2017 - Lof.Razor.Demo</p>
+            </footer>
+        </div>
+    </div>
+    </div>
+
+
+@functions {
+public RenderFragment Body { get; set; }
+}

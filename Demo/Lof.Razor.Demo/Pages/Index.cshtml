@@ -1,0 +1,35 @@
+﻿@page
+
+
+<h1>Counter</h1>
+
+<input type="text" id="CurrentCount" value="@CurrentCount" />
+<button id="jsadd" onclick="Increment()">Push me</button>
+
+@section Scripts    {
+
+    <script type="text/javascript">
+
+        var currentCount = @CurrentCount;
+
+        function Increment() {
+
+            $("#CurrentCount").val(++currentCount);
+        };
+
+    </script>
+}
+
+@functions  {
+
+public int CurrentCount { get; set; }
+
+public IActionResult OnGet()
+{
+    CurrentCount = 100;
+
+    return Page();
+}
+
+
+}
